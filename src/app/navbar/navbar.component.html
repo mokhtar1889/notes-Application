@@ -1,0 +1,21 @@
+<nav class="navbar sticky-top bg-body-tertiary">
+
+    <div class="container">        
+        <div class="d-flex align-items-center justify-content-around p-2  ">
+            <a class="navbar-brand ms-5" routerLink="home">
+                <img src="../../assets/images/Custom-Icon-Design-Pretty-Office-8-Note.256.png"  height="40" />
+            </a>
+            <h3 class="m-0 ">take my notes</h3>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle " data-bs-toggle="dropdown" href="#">
+              setting
+            </a>
+            <ul class="dropdown-menu">
+              <li *ngIf="!isLogedin"><a class="dropdown-item" routerLink="login">login</a></li>
+              <li *ngIf="!isLogedin"><a class="dropdown-item" routerLink="register">register</a></li>
+              <li *ngIf="isLogedin" (click)="logout()"><a class="dropdown-item" href="#">logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

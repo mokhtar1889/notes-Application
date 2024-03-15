@@ -1,0 +1,17 @@
+.note{
+
+    width: 200px;
+    height: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    overflow:hidden;
+
+
+
+}
+.note-content{
+
+  word-break: break-all;
+  text-overflow: ellipsis;
+  
+}

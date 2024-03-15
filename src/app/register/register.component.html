@@ -1,0 +1,67 @@
+<div class="container my-5">
+
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/images/Sign up-rafiki.svg" class="w-100" alt="sign-up">
+        </div>
+        <div class="col-md-6 d-flex justify-content-center align-items-center ">
+            <div class="container ">
+
+                <h3 class="text-center ">register Now</h3>
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <div class="mt-3">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" formControlName="name">
+                        <div class="alert alert-danger mt-3 w-100" *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched ">
+                            <p *ngIf="registerForm.get('name')?.getError('required')">name required</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" formControlName="email">
+                        <div class="alert alert-danger mt-3 w-100" *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched ">
+                            <p *ngIf="registerForm.get('email')?.getError('required')">email required</p>
+                            <p *ngIf="registerForm.get('email')?.getError('email')">invalid email</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" formControlName="password">
+                        <div class="alert alert-danger mt-3 w-100" *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched ">
+                            <p *ngIf="registerForm.get('password')?.getError('required')">password required</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" class="form-control" formControlName="age">
+                        <div class="alert alert-danger mt-3 w-100" *ngIf="registerForm.get('age')?.errors && registerForm.get('age')?.touched ">
+                            <p *ngIf="registerForm.get('age')?.getError('required')">age required</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" class="form-control" formControlName="phone">
+                        <div class="alert alert-danger mt-3 w-100" *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched ">
+                            <p *ngIf="registerForm.get('phone')?.getError('required')">phone required</p>
+                        </div>
+                    </div>
+
+                    <button [disabled]="!registerForm.valid" type="submit" class="w-100 btn btn-primary mt-3 " >
+                        <span *ngIf="!isLoading">register</span>
+                        <i *ngIf="isLoading" class="fa-solid fa-circle-notch fa-spin fa-lg"></i>
+                    </button>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
